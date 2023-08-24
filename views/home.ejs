@@ -1,0 +1,22 @@
+<!doctype html>
+<p lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body style="<%= isAuthenticated ? 'background-image: url(\'/images/sunrise.jpeg\'); background-size: cover;' : '' %>">
+<p>
+   isLoggedIn: <%= isAuthenticated %>
+</p>
+<% if (!isAuthenticated) {%>
+    <p>You can not see private iamge in this page.</p>
+    <p>Please <a href="/login">login</a> to see private image</p>
+<% }%>
+<% if (isAuthenticated) {%>
+    <p> <a href="/logout">Logout</a> here </p>
+<% }%>
+</body>
+</html>
